@@ -1,0 +1,246 @@
+:root {
+  color-scheme: dark;
+
+  --bg: #101116;
+  --surface: #1a1b24;
+  --surface-raised: #222431;
+  --text: #f2f2f7;
+  --muted: #a5a7b8;
+  --accent: #a78bfa;
+  --accent-hover: #c4b5fd;
+  --success: #86efac;
+  --border: #363747;
+  --radius: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+button,
+select {
+  font: inherit;
+}
+
+button {
+  border: 1px solid transparent;
+  border-radius: 9px;
+  padding: 0.75rem 1rem;
+  background: var(--accent);
+  color: #171323;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease, transform 160ms ease;
+}
+
+button:hover:not(:disabled) {
+  background: var(--accent-hover);
+  transform: translateY(-1px);
+}
+
+button:focus-visible,
+select:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--success);
+  outline-offset: 3px;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.site-header,
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem max(1.25rem, calc((100% - 900px) / 2));
+  border-bottom: 1px solid var(--border);
+}
+
+.logo {
+  color: var(--text);
+  font-size: 1.35rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.tagline,
+.site-footer p {
+  color: var(--muted);
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.container {
+  width: min(900px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 3rem 0;
+}
+
+.intro {
+  margin-bottom: 2.5rem;
+}
+
+.eyebrow,
+.challenge-label {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+h1 {
+  margin: 0.4rem 0;
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  line-height: 1.15;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+.intro > p:last-child,
+.progress-note {
+  color: var(--muted);
+}
+
+.quest-panel,
+.progress-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: clamp(1rem, 4vw, 2rem);
+  margin-bottom: 1.5rem;
+}
+
+.controls {
+  display: flex;
+  align-items: end;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.field {
+  flex: 1 1 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem;
+  background: var(--surface-raised);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 9px;
+}
+
+.challenge-card {
+  padding: clamp(1rem, 4vw, 1.5rem);
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.challenge-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.challenge-card > p:not(.challenge-label):not(.status) {
+  color: var(--muted);
+}
+
+#hint-area {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-left: 3px solid var(--accent);
+  background: var(--surface);
+  border-radius: 0 8px 8px 0;
+}
+
+#hint-area h4 {
+  margin: 0 0 0.35rem;
+}
+
+#hint-area p {
+  margin: 0;
+}
+
+.challenge-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.secondary-btn:hover:not(:disabled) {
+  background: var(--surface);
+}
+
+.status {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.progress-panel strong {
+  color: var(--success);
+  font-size: 1.4rem;
+}
+
+.site-footer {
+  justify-content: center;
+  border-top: 1px solid var(--border);
+  border-bottom: 0;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .controls > button {
+    width: 100%;
+  }
+
+  .challenge-actions > button {
+    flex: 1 1 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}

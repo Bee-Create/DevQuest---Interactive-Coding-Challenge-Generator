@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Challenge yourself with Dev Quest, an interactive coding challenge generator."
+  >
+
+  <title>Dev Quest | Coding Challenge Generator</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="logo" href="#" aria-label="Dev Quest home">
+      Dev<span>Quest</span>
+    </a>
+
+    <p class="tagline">One challenge at a time.</p>
+  </header>
+
+  <main class="container">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">YOUR NEXT LEVEL STARTS HERE</p>
+      <h1 id="page-title">Ready to level up?</h1>
+      <p>
+        Pick your coding path, generate a challenge,
+        and put your skills to the test.
+      </p>
+    </section>
+
+    <section class="quest-panel" aria-labelledby="quest-heading">
+      <h2 id="quest-heading">Choose your quest</h2>
+
+      <div class="controls">
+        <div class="field">
+          <label for="category">Coding category</label>
+
+          <select id="category">
+            <option value="all">Surprise me</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+          </select>
+        </div>
+
+        <button id="generate-btn" type="button">
+          Generate challenge
+        </button>
+      </div>
+
+      <article class="challenge-card" aria-labelledby="challenge-title">
+        <p class="challenge-label">CURRENT CHALLENGE</p>
+
+        <h3 id="challenge-title">Your quest awaits...</h3>
+
+        <p id="challenge-description">
+          Choose a category and generate your first coding challenge.
+        </p>
+
+        <div id="hint-area" hidden>
+          <h4>Need a hint?</h4>
+          <p id="hint-text"></p>
+        </div>
+
+        <p
+          id="challenge-status"
+          class="status"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+        ></p>
+
+        <div class="challenge-actions">
+          <button id="hint-btn" class="secondary-btn" type="button" disabled>
+            Reveal hint
+          </button>
+
+          <button id="complete-btn" type="button" disabled>
+            Mark complete
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <section class="progress-panel" aria-labelledby="progress-heading">
+      <h2 id="progress-heading">Your progress</h2>
+
+      <p>
+        Challenges completed:
+        <strong id="completed-count">0</strong>
+      </p>
+
+      <p class="progress-note">
+        Every challenge is a chance to learn something new.
+      </p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Dev Quest · Built one line at a time.</p>
+  </footer>
+</body>
+</html>
