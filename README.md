@@ -3,6 +3,7 @@
 Visit <a href="https://bee-create.github.io/DevQuest-Interactive-Coding-Challenge-Generator/">my live page</a> to see the code perform.<br>
 <h3>Purpose of This Project</h3>
 DevQuest is an interactive coding challenge generator designed to help developers practice their skills, explore different programming languages, and push themselves with new challenges. Users can choose a coding language or randomize their selection, generate challenges, reveal hints when needed, and track their completed challenges. The goal is to make coding practice more engaging, flexible, and fun.<br>
+<br>
 <b>Planned features:</b><br>
 -Choose a challenge category or randomize it.<br>
 -Generate a random coding challenge.<br>
